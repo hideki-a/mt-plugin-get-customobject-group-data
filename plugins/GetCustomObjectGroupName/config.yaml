@@ -1,0 +1,8 @@
+name: GetCustomObjectGroupName
+key: GetCustomObjectGroupName
+id: GetCustomObjectGroupName
+version: 1.0
+
+tags:
+  function:
+    CustomObjectGroupName: $GetCustomObjectGroupName::GetCustomObjectGroupName::Tags::_hdlr_custom_object_group_name

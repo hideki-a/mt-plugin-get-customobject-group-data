@@ -1,4 +1,4 @@
-package GetCustomObjectGroupName::Tags;
+package GetCustomObjectGroupData::Tags;
 use strict;
 use CustomFields::Util qw( get_meta );
 use CustomObject::CustomObjectGroup;

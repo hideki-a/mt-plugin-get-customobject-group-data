@@ -1,11 +1,11 @@
-name: GetCustomObjectGroupName
-key: GetCustomObjectGroupName
-id: GetCustomObjectGroupName
+name: GetCustomObjectGroupData
+key: GetCustomObjectGroupData
+id: GetCustomObjectGroupData
 version: 1.0
 
 tags:
   block:
-    CustomObjectGroupData: $GetCustomObjectGroupName::GetCustomObjectGroupName::Tags::_hdlr_custom_object_group_data
+    CustomObjectGroupData: $GetCustomObjectGroupData::GetCustomObjectGroupData::Tags::_hdlr_custom_object_group_data
   function:
-    CustomObjectGroupName: $GetCustomObjectGroupName::GetCustomObjectGroupName::Tags::_hdlr_custom_object_group_name
-    CustomObjectGroupID: $GetCustomObjectGroupName::GetCustomObjectGroupName::Tags::_hdlr_custom_object_group_id
+    CustomObjectGroupName: $GetCustomObjectGroupData::GetCustomObjectGroupData::Tags::_hdlr_custom_object_group_name
+    CustomObjectGroupID: $GetCustomObjectGroupData::GetCustomObjectGroupData::Tags::_hdlr_custom_object_group_id

@@ -6,9 +6,16 @@ use CustomObject::CustomObjectGroup;
 sub _hdlr_custom_object_group_data{
     my ($ctx, $args, $cond) = @_;
     my $entry = $ctx->stash('entry');
-    my $field_name = $ctx->stash('field')->basename;
-    my $meta = get_meta($entry);
-    my $group_id = $meta->{ $field_name };
+    my $group_id;
+
+    if ($args->{ group_id }) {
+        $group_id = $args->{ group_id };
+    } else {
+        my $field_name = $ctx->stash('field')->basename;
+        my $meta = get_meta($entry);
+        $group_id = $meta->{ $field_name };
+    }
+
     my @groups = CustomObject::CustomObjectGroup->load( $group_id );
     my $out;
 

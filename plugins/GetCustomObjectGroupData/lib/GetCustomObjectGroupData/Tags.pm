@@ -16,19 +16,18 @@ sub _hdlr_custom_object_group_data{
         $group_id = $meta->{ $field_name };
     }
 
-    my @groups = CustomObject::CustomObjectGroup->load( $group_id );
-    my $out;
+    my $group = CustomObject::CustomObjectGroup->load( $group_id );
+    my $res = '';
 
-    for my $group (@groups) {
-        local $ctx->{__stash}{customobjectgroupdata} = $group;
-        my $tokens = $ctx->stash('tokens');
-        my $builder = $ctx->stash('builder');
+    local $ctx->{__stash}{customobjectgroupdata} = $group;
+    my $tokens = $ctx->stash('tokens');
+    my $builder = $ctx->stash('builder');
 
-        $out .= $builder->build( $ctx, $tokens, $cond )
-            || return $ctx->error( $builder->errstr );
-    }
+    defined( my $out .= $builder->build( $ctx, $tokens, $cond ) )
+        or return $ctx->error( $builder->errstr );
+    $res .= $out;
 
-    return $out;
+    return $res;
 }
 
 sub _hdlr_custom_object_group_name {

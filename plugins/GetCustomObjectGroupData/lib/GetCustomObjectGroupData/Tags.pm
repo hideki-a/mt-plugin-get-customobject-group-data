@@ -36,7 +36,13 @@ sub _hdlr_custom_object_group_name {
         || $ctx->error('You used an CustomObjectGroupName tag outside of the proper context.');
 
     if ($group) {
-        return $group->name;
+        if ($args->{ brackets }) {
+            my $name = $group->name;
+            $name =~ s/^.*\[(.*)\].*$/$1/g; 
+            return $name;
+        } else {
+            return $group->name;
+        }
     }
 }
 

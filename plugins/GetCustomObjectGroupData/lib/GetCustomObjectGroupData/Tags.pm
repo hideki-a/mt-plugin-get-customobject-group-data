@@ -56,4 +56,15 @@ sub _hdlr_custom_object_group_id {
     }
 }
 
+sub _hdlr_custom_object_group_contents_count {
+    my ($ctx, $args) = @_;
+    my $group = $ctx->stash('customobjectgroupdata')
+        || $ctx->error('You used an CustomObjectGroupID tag outside of the proper context.');
+
+    if ($group) {
+        require CustomObject::CustomObjectOrder;
+        return CustomObject::CustomObjectOrder->count( { group_id => $group->id } );
+    }
+}
+
 1;

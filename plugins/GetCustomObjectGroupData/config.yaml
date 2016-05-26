@@ -9,3 +9,4 @@ tags:
   function:
     CustomObjectGroupName: $GetCustomObjectGroupData::GetCustomObjectGroupData::Tags::_hdlr_custom_object_group_name
     CustomObjectGroupID: $GetCustomObjectGroupData::GetCustomObjectGroupData::Tags::_hdlr_custom_object_group_id
+    CustomObjectGroupContentsCount: $GetCustomObjectGroupData::GetCustomObjectGroupData::Tags::_hdlr_custom_object_group_contents_count
